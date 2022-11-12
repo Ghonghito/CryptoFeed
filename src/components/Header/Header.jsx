@@ -38,10 +38,10 @@ const Header = () => {
         <div className='z-10 inset-0 w-screen h-screen overflow-y-auto p-3 mt-[-50px] bg-whiteBackground dark:bg-darkBackground dark:bg-darkModal rounded-md bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-70 shadow'>
           <div className='flex items-center justify-between'>
             <div className='flex gap-2 items-center'>
-              <a href='/' className='flex items-center gap-2'>
+              <NavLink to={`/`} className='flex items-center gap-2'>
                 <img src={CryptoFeedLogo} alt='logo' className='w-5' />
                 <p className='font-bold text-primary'>CRYPTOFEED</p>
-              </a>
+              </NavLink>
               <div>
                 <DarkModeButton />
               </div>
@@ -54,7 +54,9 @@ const Header = () => {
           <div>
             <div className='flex flex-col py-2 mt-2 space-y-4'>
               <a href='/#' className='duration-200 text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary text-md'>კრიპტოვალუტები</a>
-              <a href='/#' className='duration-200 text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary text-md'>ბირჟები</a>
+              <NavLink to={`/exchanges`}>
+                <p className='duration-200 text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary text-sm'>ბირჟები</p>
+              </NavLink>
               <a href='/#' className='duration-200 text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary text-md'>NFT</a>
               <a href='/#' className='duration-200 text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary text-md'>პროდუქტები</a>
             </div>
@@ -87,15 +89,15 @@ const Header = () => {
           <div className='flex justify-between items-center py-3 md:justify-between md:space-x-10'>
             <div className='flex justify-start lg:flex-1 items-center space-x-8'>
               <div>
-                <a href='/' className='flex items-center gap-2'>
+                <NavLink to={`/`} className='flex items-center gap-2'>
                   <img src={CryptoFeedLogo} alt='logo' className='w-5' />
                   <p className='font-bold text-primary'>CRYPTOFEED</p>
-                </a>
+                </NavLink>
               </div>
               <div className='space-x-5 hidden md:flex'>
                 <a href='/#' className='duration-200 text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary text-sm'>კრიპტოვალუტები</a>
                 <NavLink to={`/exchanges`}>
-                  <a href='/#' className='duration-200 text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary text-sm'>ბირჟები</a>
+                  <p className='duration-200 text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary text-sm'>ბირჟები</p>
                 </NavLink>
                 <a href='/#' className='duration-200 text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary text-sm'>NFT</a>
                 <a href='/#' className='duration-200 text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary text-sm'>პროდუქტები</a>
