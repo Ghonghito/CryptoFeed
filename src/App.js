@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Header from 'components/Header/Header';
 import Main from 'pages/Main'
 import CoinPage from 'pages/CoinPage'
+import Exchanges from 'pages/Exchanges'
 
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
           <Route path='/' element={<Main />} />
           <Route path='/dashboard' element={<Main />} />
           <Route path='/currency/:id' element={<CoinPage />} />
+          <Route path='/exchanges' element={<Exchanges />} />
         </Routes>
       </BrowserRouter>
     </div>

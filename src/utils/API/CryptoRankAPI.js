@@ -6,3 +6,10 @@ export const getTrendingCoins = async () => {
     .catch(() => 'error');
   return json
 }
+
+export const getExchanges = async () => {
+  const json = await axios('https://api.cryptorank.io/v0/exchanges')
+    .then((response) => response)
+    .catch(() => 'error');
+  return json
+}

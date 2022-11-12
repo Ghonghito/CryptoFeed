@@ -60,7 +60,7 @@ const Index = () => {
                 </thead>
                 <tbody>
                   {data.data.map((coin) => (
-                    <tr key={coin.name} className='w-full cursor-pointer duratino-300 hover:bg-blue-100 dark:hover:bg-zinc-800'>
+                    <tr key={coin.name} className='w-full cursor-pointer duratino-300 hover:bg-gray-200 dark:hover:bg-zinc-800'>
                       <th className='px-6 py-4'>
                         <p className='text-gray-500'>{coin.market_cap_rank}</p>
                       </th>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Search from './Search'
 import DarkModeButton from './DarkModeButton'
 import CryptoFeedLogo from 'assets/images/CryptoFeedLogo.svg'
+import { NavLink } from 'react-router-dom'
 import { Transition } from '@headlessui/react'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { AiOutlineClose } from 'react-icons/ai'
@@ -28,10 +29,10 @@ const Header = () => {
     <div>
       <Transition show={isOpen}
         className='fixed h-screen flex md:hidden mt-12'
-        enter='transition ease-in-out duration-300 transform'
+        enter='transition ease-in-out duration-200 transform'
         enterFrom='-translate-x-full'
         enterTo='translate-x-0'
-        leave='transition ease-in-out duration-300 transform'
+        leave='transition ease-in-out duration-200 transform'
         leaveFrom='translate-x-0'
         leaveTo='-translate-x-full'>
         <div className='z-10 inset-0 w-screen h-screen overflow-y-auto p-3 mt-[-50px] bg-whiteBackground dark:bg-darkBackground dark:bg-darkModal rounded-md bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-70 shadow'>
@@ -93,7 +94,9 @@ const Header = () => {
               </div>
               <div className='space-x-5 hidden md:flex'>
                 <a href='/#' className='duration-200 text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary text-sm'>კრიპტოვალუტები</a>
-                <a href='/#' className='duration-200 text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary text-sm'>ბირჟები</a>
+                <NavLink to={`/exchanges`}>
+                  <a href='/#' className='duration-200 text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary text-sm'>ბირჟები</a>
+                </NavLink>
                 <a href='/#' className='duration-200 text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary text-sm'>NFT</a>
                 <a href='/#' className='duration-200 text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary text-sm'>პროდუქტები</a>
               </div>
