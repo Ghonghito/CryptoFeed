@@ -49,7 +49,7 @@ const Header = () => {
               <AiOutlineClose className='text-primary' />
             </div>
           </div>
-          <div className='border-[1px] rounded-full w-full mt-3 border-primary shadow-xl shadow-primary'></div>
+          <div className='border-[1px] w-full mt-3 border-primary shadow-primary'></div>
           <div>
             <div className='flex flex-col py-2 mt-2 space-y-4'>
               <a href='/#' className='duration-200 text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary text-md'>კრიპტოვალუტები</a>

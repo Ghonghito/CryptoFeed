@@ -24,10 +24,10 @@ const Index = () => {
     <div>
       {!isLoading ? (
         <div>
-          <div className='flex overflow-y-auto'>
-            {data.status === 200 ? (
+          {data.status === 200 ? (
+            <div className='flex overflow-y-auto'>
               <table className='w-full max-w-7xl mx-auto px-4 sm:px-6 text-sm text-left'>
-                <thead className='text-gray-500 duration-200 bg-white dark:bg-zinc-900 sticky top-0 z-50'>
+                <thead className='text-gray-500 duration-200 bg-zinc-100 dark:bg-zinc-800'>
                   <tr>
                     <th scope='col' className='px-6 py-3'>
                       #
@@ -107,12 +107,13 @@ const Index = () => {
                   ))}
                 </tbody>
               </table>
-            ) : (
-              <div className='flex justify-center w-full mt-3'>
-                <Alert variant='error' text='დაფიქსირდა შეცდომა! გთხოვთ ცადოთ თავიდან!' />
-              </div>
-            )}
-          </div>
+            </div>
+
+          ) : (
+            <div className='flex justify-center w-full mt-3'>
+              <Alert variant='error' text='დაფიქსირდა შეცდომა! გთხოვთ ცადოთ თავიდან!' />
+            </div>
+          )}
         </div>
       ) : null}
     </div>
