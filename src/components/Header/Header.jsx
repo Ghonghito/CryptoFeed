@@ -49,20 +49,23 @@ const Header = () => {
               <AiOutlineClose className='text-primary' />
             </div>
           </div>
-          <div className='border-[1px] w-full mt-3 border-primary shadow-primary'></div>
+          <div className='border-[1px] w-full mt-3 border-primary'></div>
           <div>
             <div className='flex flex-col py-2 mt-2 space-y-4'>
-              <SidenavItem menuItem={menuItem} />
+              <SidenavItem menuItem={menuItem} mobile={true} />
             </div>
           </div>
-          <div>
-            <DarkModeButton />
+          <div className='border-[1px] w-full mt-3 border-primary'></div>
+          <div className='flex'>
+            <div className='bg-zinc-100 dark:bg-zinc-800 p-2 rounded-md mt-3 dark:shadow-md'>
+              <DarkModeButton />
+            </div>
           </div>
         </div>
       </Transition>
-      <div className=''>
-        {Number(globalData.status) === 200 ? (
-          <div className='hidden md:flex'>
+      <div>
+        <div className='hidden md:flex'>
+          {Number(globalData.status) === 200 ? (
             <div className='w-full max-w-7xl mx-auto px-4 sm:px-6'>
               <div className='flex justify-between items-center py-3 md:justify-between md:space-x-10'>
                 <div className='flex justify-start lg:flex-1 items-center space-x-8'>
@@ -74,13 +77,11 @@ const Header = () => {
                     <p className='text-gray-400'>BTC დომინირება: <span className='text-primary'>{Number(globalData.data.data.market_cap_percentage.btc).toLocaleString('en-US')}%</span></p>
                   </div>
                 </div>
-                <div>
-                  <DarkModeButton />
-                </div>
+                <DarkModeButton />
               </div>
             </div>
-          </div>
-        ) : null}
+          ) : null}
+        </div>
         <div className='border-[1px] duration-200 border-zinc-200 dark:border-zinc-800'></div>
         <div className='w-full max-w-7xl mx-auto px-4 sm:px-6'>
           <div className='flex justify-between items-center py-3 md:justify-between md:space-x-10'>
