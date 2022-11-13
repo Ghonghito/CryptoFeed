@@ -28,7 +28,7 @@ const Header = () => {
   }, [])
 
   return (
-    <div>
+    <div className='duration-200 bg-whiteBackground dark:bg-darkBackground'>
       <Transition show={isOpen}
         className='fixed h-screen flex md:hidden mt-12 z-50'
         enter='transition ease-in-out duration-200 transform'
@@ -46,7 +46,7 @@ const Header = () => {
               </NavLink>
             </div>
             <div className='cursor-pointer' onClick={() => setIsOpen(!isOpen)}>
-              <AiOutlineClose className='text-primary' />
+              <AiOutlineClose className='text-primary text-2xl' />
             </div>
           </div>
           <div className='border-[1px] w-full mt-3 border-zinc-200 dark:border-zinc-800'></div>
@@ -100,7 +100,7 @@ const Header = () => {
               <Search />
             </div>
             <div className='flex md:hidden'>
-              <GiHamburgerMenu onClick={() => setIsOpen(!isOpen)} className='text-primary text-lg cursor-pointer' />
+              <GiHamburgerMenu onClick={() => setIsOpen(!isOpen)} className='text-primary text-2xl cursor-pointer' />
             </div>
           </div>
         </div>
@@ -126,8 +126,8 @@ const Header = () => {
               </div>
             ) : null}
           </div>
+          <div className='border-[1px] duration-200 border-zinc-200 dark:border-zinc-800'></div>
         </div>
-        <div className='border-[1px] duration-200 border-zinc-200 dark:border-zinc-800'></div>
       </div>
     </div>
   )

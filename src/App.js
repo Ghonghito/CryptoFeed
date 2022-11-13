@@ -20,9 +20,9 @@ function App() {
       document.documentElement.classList.remove('dark')
     }
   }, [])
-
+  /* bg-gradient-to-b from-[#081120] to-[#18181b] */
   return (
-    <div className='duration-200 bg-whiteBackground dark:bg-zinc-900 min-h-screen'>
+    <div className='duration-200 min-h-screen bg-whiteBackground dark:darkGradient'>
       <BrowserRouter>
         <Header />
         <Routes>
