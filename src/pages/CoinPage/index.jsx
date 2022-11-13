@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import CoinInfo from './components/Info'
 import Tag from 'components/Tags'
+import Typography from 'components/Typography'
 import { useLocation } from 'react-router-dom';
 import { getCoinInfo } from 'utils/API/CoinGeckoAPI';
 
@@ -29,15 +30,15 @@ const Index = () => {
             <div>
               <div className='flex items-center gap-2'>
                 <img src={data.data.image.large} alt={data.data.name} className='w-11' />
-                <p className='text-zinc-900 dark:text-gray-400 text-xl'>{data.data.name}</p>
+                <Typography className='text-xl'>{data.data.name}</Typography>
                 <Tag data={`${String(data.data.symbol).toUpperCase()}`} />
               </div>
               <div className='gap-2 py-2 flex md:hidden'>
                 <div className=''>
-                  <p className='text-zinc-900 dark:text-gray-400'>{data.data.name}-ის ფასი</p>
+                  <Typography>{data.data.name}-ის ფასი</Typography>
                   <div>
                     <div className='flex items-center gap-3'>
-                      <p className='text-zinc-900 dark:text-white m text-3xl font-bold'>${Number(data.data.market_data.current_price.usd).toLocaleString('en-US')}</p>
+                      <p className='text-zinc-900 dark:text-white text-3xl font-bold'>${Number(data.data.market_data.current_price.usd).toLocaleString('en-US')}</p>
                       <div className={`${data.data.market_data.price_change_percentage_24h > 0 ? 'bg-green-500' : 'bg-red-500'} px-3 py-1 rounded-lg`}>
                         <p className='text-white text-md font-bold text-sm'>
                           {Number(data.data.market_data.price_change_percentage_24h).toFixed(2)}%
@@ -81,7 +82,7 @@ const Index = () => {
             </div>
             <div className='gap-2 hidden md:flex'>
               <div className=''>
-                <p className='text-zinc-900 dark:text-gray-400'>{data.data.name}-ის ფასი</p>
+                <Typography>{data.data.name}-ის ფასი</Typography>
                 <div>
                   <div className='flex items-center gap-3'>
                     <p className='text-zinc-900 dark:text-white m text-3xl font-bold'>${Number(data.data.market_data.current_price.usd).toLocaleString('en-US')}</p>

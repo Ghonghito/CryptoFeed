@@ -1,4 +1,5 @@
 import React from 'react'
+import Typography from 'components/Typography'
 
 const TrendingItem = ({ name, symbol, price, logo, rank }) => {
   return (
@@ -7,15 +8,15 @@ const TrendingItem = ({ name, symbol, price, logo, rank }) => {
         <div className='flex items-center gap-2'>
           <img src={logo} alt='BTC' className='w-5' />
           <div className='flex items-center gap-2'>
-            {name && (<p className='text-zinc-900 dark:text-gray-400'>{name}</p>)}
-            <p className='text-zinc-900 dark:text-gray-500 text-sm'>{symbol}</p>
+            {name && (<Typography>{name}</Typography>)}
+            <Typography className='text-sm'>{symbol}</Typography>
           </div>
         </div>
         {price ? (
-          <p className='duration-200 text-zinc-900 dark:text-gray-400'>{price}</p>
+          <Typography>{price}</Typography>
         ) : null}
         {rank ? (
-          <p className='duration-200 text-zinc-900 dark:text-gray-400'>#{rank}</p>
+          <Typography>#{rank}</Typography>
         ) : null}
       </div>
     </div>

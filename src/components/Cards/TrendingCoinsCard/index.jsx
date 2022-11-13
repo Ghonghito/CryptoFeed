@@ -1,6 +1,7 @@
 import React from 'react'
 import TrendingItem from './TrendingItem'
 import CoinGeckoLogo from 'assets/images/aggregators/CoinGeckoLogo.svg'
+import Typography from 'components/Typography'
 import { NavLink } from 'react-router-dom'
 
 const Index = ({ data }) => {
@@ -8,7 +9,7 @@ const Index = ({ data }) => {
     <div>
       <div className='duration-200 bg-zinc-100 dark:bg-zinc-800 rounded-lg shadow-sm p-3'>
         <div className='flex items-center justify-between'>
-          <p className='text-zinc-900 dark:text-gray-400'>🔥 ტრენდული ქოინები</p>
+          <Typography>🔥 ტრენდული ქოინები</Typography>
           <img src={CoinGeckoLogo} alt='CoinGecko Logo' className='w-5' />
         </div>
         <div className='mt-3'>

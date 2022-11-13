@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import Typography from 'components/Typography'
 import { getExchanges } from 'utils/API/CryptoRankAPI'
 
 const Index = () => {
@@ -45,25 +46,25 @@ const Index = () => {
               {exchangesData.data.map((x) => (
                 <tr key={x.key} className='w-full cursor-pointer duratino-300 hover:bg-gray-200 dark:hover:bg-zinc-800'>
                   <th className='px-6 py-4'>
-                    <p className='font-bold duration-200 text-gray-700 dark:text-white/70'>{x.num}</p>
+                    <Typography className='font-bold'>{x.num}</Typography>
                   </th>
                   <th className='px-6 py-4 flex items-center gap-2'>
                     <div className='flex items-center gap-2'>
                       <img src={x.icon} alt={x.key} className='w-8' />
-                      <p className='font-bold duration-200 text-gray-700 dark:text-white/70'>{x.name}</p>
+                      <Typography className='font-bold'>{x.name}</Typography>
                     </div>
                   </th>
                   <th className='px-6 py-4'>
-                    <p className='font-bold duration-200 text-gray-700 dark:text-white/70'>${Number(x.volumes.day.toUSD).toLocaleString('en-US')}</p>
+                    <Typography className='font-bold'>${Number(x.volumes.day.toUSD).toLocaleString('en-US')}</Typography>
                   </th>
                   <th className='px-6 py-4'>
-                    <p className='font-bold duration-200 text-gray-700 dark:text-white/70'>{x.pairsCount}</p>
+                    <Typography className='font-bold'>{x.pairsCount}</Typography>
                   </th>
                   <th className='px-6 py-4'>
-                    <p className='font-bold duration-200 text-gray-700 dark:text-white/70'>{x.country}</p>
+                    <Typography className='font-bold'>{x.country}</Typography>
                   </th>
                   <th className='px-6 py-4'>
-                    <p className='font-bold duration-200 text-gray-700 dark:text-white/70'>{Number(x.percentVolume).toFixed(2)}%</p>
+                    <Typography className='font-bold'>{Number(x.percentVolume).toFixed(2)}%</Typography>
                   </th>
                 </tr>
               ))}

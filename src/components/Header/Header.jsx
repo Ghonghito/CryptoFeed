@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Search from '../Search/Search'
 import DarkModeButton from 'components/DarkModeButton'
 import CryptoFeedLogo from 'assets/images/CryptoFeedLogo.svg'
+import Typography from 'components/Typography'
 import { menuItem } from 'routes'
 import { NavLink } from 'react-router-dom'
 import { Transition } from '@headlessui/react'
@@ -70,11 +71,11 @@ const Header = () => {
               <div className='flex justify-between items-center py-3 md:justify-between md:space-x-10'>
                 <div className='flex justify-start lg:flex-1 items-center space-x-8'>
                   <div className='space-x-5 hidden md:flex text-xs'>
-                    <p className='text-gray-400'>ქოინები: <span className='text-primary'>{Number(globalData.data.data.active_cryptocurrencies).toLocaleString('en-US')}</span></p>
-                    <p className='text-gray-400'>ბირჟები: <span className='text-primary'>{Number(globalData.data.data.markets).toLocaleString('en-US')}</span></p>
-                    <p className='text-gray-400'>კაპიტალიზაცია: <span className='text-primary'>${Number(globalData.data.data.total_market_cap.usd).toLocaleString('en-US')}</span></p>
-                    <p className='text-gray-400'>24სთ ნავაჭრი: <span className='text-primary'>${Number(globalData.data.data.total_volume.usd).toLocaleString('en-US')}</span></p>
-                    <p className='text-gray-400'>BTC დომინირება: <span className='text-primary'>{Number(globalData.data.data.market_cap_percentage.btc).toLocaleString('en-US')}%</span></p>
+                    <Typography>ქოინები: <span className='text-primary'>{Number(globalData.data.data.active_cryptocurrencies).toLocaleString('en-US')}</span></Typography>
+                    <Typography>ბირჟები: <span className='text-primary'>{Number(globalData.data.data.markets).toLocaleString('en-US')}</span></Typography>
+                    <Typography>კაპიტალიზაცია: <span className='text-primary'>${Number(globalData.data.data.total_market_cap.usd).toLocaleString('en-US')}</span></Typography>
+                    <Typography>24სთ ნავაჭრი: <span className='text-primary'>${Number(globalData.data.data.total_volume.usd).toLocaleString('en-US')}</span></Typography>
+                    <Typography>BTC დომინირება: <span className='text-primary'>{Number(globalData.data.data.market_cap_percentage.btc).toLocaleString('en-US')}%</span></Typography>
                   </div>
                 </div>
                 <DarkModeButton />
@@ -112,11 +113,11 @@ const Header = () => {
                 <div className='flex justify-between items-center mt-2 mb-2 md:justify-between md:space-x-10'>
                   <div className='flex justify-start lg:flex-1 items-center space-x-8'>
                     <div className='space-x-5 flex text-xs'>
-                      <p className='text-gray-400 flex items-center gap-1'>ქოინები: <span className='text-primary'>{Number(globalData.data.data.active_cryptocurrencies).toLocaleString('en-US')}</span></p>
-                      <p className='text-gray-400 flex items-center gap-1'>ბირჟები: <span className='text-primary'>{Number(globalData.data.data.markets).toLocaleString('en-US')}</span></p>
-                      <p className='text-gray-400 flex items-center gap-1'>კაპიტალიზაცია: <span className='text-primary'>${Number(globalData.data.data.total_market_cap.usd).toLocaleString('en-US')}</span></p>
-                      <p className='text-gray-400 flex items-center gap-1'>ნავაჭრი: <span className='text-primary'>${Number(globalData.data.data.total_volume.usd).toLocaleString('en-US')}</span></p>
-                      <p className='text-gray-400 flex items-center gap-1'>დომინირება: <span className='text-primary'>{Number(globalData.data.data.market_cap_percentage.btc).toLocaleString('en-US')}%</span></p>
+                      <Typography className='flex items-center gap-1'>ქოინები: <span className='text-primary'>{Number(globalData.data.data.active_cryptocurrencies).toLocaleString('en-US')}</span></Typography>
+                      <Typography className='flex items-center gap-1'>ბირჟები: <span className='text-primary'>{Number(globalData.data.data.markets).toLocaleString('en-US')}</span></Typography>
+                      <Typography className='flex items-center gap-1'>კაპიტალიზაცია: <span className='text-primary'>${Number(globalData.data.data.total_market_cap.usd).toLocaleString('en-US')}</span></Typography>
+                      <Typography className='flex items-center gap-1'>ნავაჭრი: <span className='text-primary'>${Number(globalData.data.data.total_volume.usd).toLocaleString('en-US')}</span></Typography>
+                      <Typography className='flex items-center gap-1'>დომინირება: <span className='text-primary'>{Number(globalData.data.data.market_cap_percentage.btc).toLocaleString('en-US')}%</span></Typography>
                     </div>
                   </div>
                   <div className='hidden md:flex'>

@@ -1,4 +1,5 @@
 import React from 'react'
+import Typography from 'components/Typography'
 import { FaArrowDown, FaArrowUp } from 'react-icons/fa'
 
 const Index = ({ data, name, shadowColor }) => {
@@ -6,7 +7,7 @@ const Index = ({ data, name, shadowColor }) => {
     <div>
       <div className={`duration-200 bg-zinc-100 dark:bg-zinc-800 rounded-lg shadow-sm ${shadowColor ? `shadow-${shadowColor}-500` : null} p-4`}>
         <div className='flex items-center gap-1'>
-          <p className='duration-200 text-zinc-900 dark:text-gray-400 text-2xl'>{data}</p>
+          <Typography className='text-2xl'>{data}</Typography>
           {shadowColor ? (
             <div>
               {shadowColor === 'green' ? (
@@ -21,7 +22,7 @@ const Index = ({ data, name, shadowColor }) => {
             </div>
           ) : null}
         </div>
-        <p className='duration-200 text-zinc-900 dark:text-gray-400 text-sm'>{name}</p>
+        <Typography className='text-sm'>{name}</Typography>
       </div>
     </div>
   )

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Alert from 'components/Alerts'
+import Typography from 'components/Typography'
 import { NavLink } from 'react-router-dom'
 import { getCryptoData } from 'utils/API/CoinGeckoAPI'
 /* import { Sparklines, SparklinesLine } from 'react-sparklines'; */
@@ -67,8 +68,8 @@ const Index = () => {
                       <th className='px-6 py-4 flex items-center gap-2'>
                         <img src={coin.image} alt='btc' className='w-5' />
                         <NavLink to={`/currency/${coin.id}`}>
-                          <p className='font-bold duration-200 text-gray-700 dark:text-white/70'>{coin.name}</p>
-                          <p className='font-bold duration-200 text-gray-700 dark:text-white/70 text-xs hidden md:flex'>{String(coin.symbol).toUpperCase()}</p>
+                          <Typography className='font-bold'>{coin.name}</Typography>
+                          <Typography className='font-bold text-xs hidden md:flex'>{String(coin.symbol).toUpperCase()}</Typography>
                         </NavLink>
                       </th>
                       <th className='px-6 py-4'>
@@ -93,10 +94,10 @@ const Index = () => {
                         </p>
                       </th>
                       <th className='px-6 py-4'>
-                        <p className='text-gray-500'>${Number(coin.total_volume).toLocaleString('en-US')}</p>
+                        <Typography>${Number(coin.total_volume).toLocaleString('en-US')}</Typography>
                       </th>
                       <th className='px-6 py-4'>
-                        <p className='text-gray-500'>${Number(coin.market_cap).toLocaleString('en-US')}</p>
+                        <Typography>${Number(coin.market_cap).toLocaleString('en-US')}</Typography>
                       </th>
                       {/* <th className=''>
                         <Sparklines data={coin.sparkline_in_7d.price} svgWidth={135} svgHeight={50} width={135} height={50}>

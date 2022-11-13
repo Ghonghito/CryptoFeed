@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import BigCard from 'components/Cards/BigCard'
 import TrendingCoinsCard from 'components/Cards/TrendingCoinsCard'
+import Typography from 'components/Typography'
 import { getGlobalData, getTrendingCoins } from 'utils/API/CoinGeckoAPI';
 
 function App() {
@@ -26,7 +27,7 @@ function App() {
   return (
     <div>
       <div className='hidden md:flex'>
-        <div>
+        <div className='w-full'>
           <div>
             {Number(data.status) === 200 ? (
               <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 w-full mt-3 mb-3'>
@@ -60,7 +61,7 @@ function App() {
           <div onClick={() => setShowStats(!showStats)} className={`${showStats ? 'bg-blue-600' : 'bg-zinc-500'} inline-flex h-6 w-11 items-center rounded-full`}>
             <div className={`${showStats ? 'translate-x-6' : 'translate-x-1'} h-4 w-4 transform rounded-full bg-white transition`}></div>
           </div>
-          <p className='duration-200 text-zinc-900 dark:text-gray-400'>სტატისტიკის ნახვა</p>
+          <Typography>სტატისტიკის ნახვა</Typography>
         </div>
         {showStats && (
           <div>
