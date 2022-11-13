@@ -24,7 +24,7 @@ const Index = () => {
       {exchangesData.status === 200 ? (
         <div className='flex overflow-y-auto'>
           <table className='w-full max-w-7xl mx-auto px-4 sm:px-6 text-sm text-left'>
-            <thead className='text-gray-500 duration-200'>
+            <thead className='text-gray-500 duration-200 text-xs'>
               <tr>
                 <th scope='col' className='px-6 py-3'>
                   #

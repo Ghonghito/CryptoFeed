@@ -7,7 +7,7 @@ function App() {
   return (
     <div className='w-full max-w-7xl mx-auto px-4 sm:px-6 py-3'>
       <HeroStatistics />
-      <div className='mt-3'>
+      <div>
         <CryptoTable />
       </div>
     </div>
