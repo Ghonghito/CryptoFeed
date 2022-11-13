@@ -4,6 +4,7 @@ import Header from 'components/Header/Header';
 import Main from 'pages/Main'
 import CoinPage from 'pages/CoinPage'
 import Exchanges from 'pages/Exchanges'
+import News from 'pages/News'
 
 function App() {
 
@@ -30,6 +31,7 @@ function App() {
           <Route path='/dashboard' element={<Main />} />
           <Route path='/currency/:id' element={<CoinPage />} />
           <Route path='/exchanges' element={<Exchanges />} />
+          <Route path='/news' element={<News />} />
         </Routes>
       </BrowserRouter>
     </div>

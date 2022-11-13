@@ -30,7 +30,7 @@ function App() {
         <div className='w-full'>
           <div>
             {Number(data.status) === 200 ? (
-              <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 w-full mt-3 mb-3'>
+              <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 w-full mb-3'>
                 <BigCard
                   data={`$${Number(data.data.data.total_market_cap.usd).toLocaleString('en-US')}`}
                   name='ბაზრის კაპიტალიზაცია'

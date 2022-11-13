@@ -4,7 +4,7 @@ import { MdDarkMode } from 'react-icons/md'
 const Index = () => {
   const darkModeSet = localStorage.getItem('darkMode')
 
-  function setDarkMode() {
+  const setDarkMode = () => {
     const darkModeSet = localStorage.getItem('darkMode')
     if (darkModeSet === null) {
       localStorage.setItem('darkMode', 'dark')
@@ -22,7 +22,6 @@ const Index = () => {
     setDarkMode()
     // eslint-disable-next-line
   }, [])
-
 
   return (
     <div>

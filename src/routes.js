@@ -23,4 +23,10 @@ export const menuItem = [
     key: 'products',
     name: 'პროდუქტები'
   },
+  {
+    type: 'noncollapsible',
+    path: '/news',
+    key: 'news',
+    name: 'სიახლეები'
+  }
 ]
