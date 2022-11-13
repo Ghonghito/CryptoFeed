@@ -26,9 +26,7 @@ const Index = () => {
 
   return (
     <div>
-      <div
-        onClick={() => setDarkMode()}
-        className='cursor-pointer'>
+      <div onClick={() => setDarkMode()} className='cursor-pointer'>
         {darkModeSet === 'light' ?
           <MdDarkMode className='text-2xl text-primary' />
           :
