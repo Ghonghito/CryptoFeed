@@ -105,6 +105,29 @@ const Header = () => {
           </div>
         </div>
         <div className='border-[1px] duration-200 border-zinc-200 dark:border-zinc-800'></div>
+        <div className='flex md:hidden'>
+          <div className='overflow-y-auto'>
+            {Number(globalData.status) === 200 ? (
+              <div className='px-4 sm:px-6'>
+                <div className='flex justify-between items-center mt-2 mb-2 md:justify-between md:space-x-10'>
+                  <div className='flex justify-start lg:flex-1 items-center space-x-8'>
+                    <div className='space-x-5 flex text-xs'>
+                      <p className='text-gray-400 flex items-center gap-1'>ქოინები: <span className='text-primary'>{Number(globalData.data.data.active_cryptocurrencies).toLocaleString('en-US')}</span></p>
+                      <p className='text-gray-400 flex items-center gap-1'>ბირჟები: <span className='text-primary'>{Number(globalData.data.data.markets).toLocaleString('en-US')}</span></p>
+                      <p className='text-gray-400 flex items-center gap-1'>კაპიტალიზაცია: <span className='text-primary'>${Number(globalData.data.data.total_market_cap.usd).toLocaleString('en-US')}</span></p>
+                      <p className='text-gray-400 flex items-center gap-1'>ნავაჭრი: <span className='text-primary'>${Number(globalData.data.data.total_volume.usd).toLocaleString('en-US')}</span></p>
+                      <p className='text-gray-400 flex items-center gap-1'>დომინირება: <span className='text-primary'>{Number(globalData.data.data.market_cap_percentage.btc).toLocaleString('en-US')}%</span></p>
+                    </div>
+                  </div>
+                  <div className='hidden md:flex'>
+                    <DarkModeButton />
+                  </div>
+                </div>
+              </div>
+            ) : null}
+          </div>
+        </div>
+        <div className='border-[1px] duration-200 border-zinc-200 dark:border-zinc-800'></div>
       </div>
     </div>
   )
