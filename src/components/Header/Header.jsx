@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react'
-import Search from './Search'
-import DarkModeButton from './DarkModeButton'
+import Search from '../Search/Search'
+import DarkModeButton from 'components/DarkModeButton'
 import CryptoFeedLogo from 'assets/images/CryptoFeedLogo.svg'
+import { menuItem } from 'routes'
 import { NavLink } from 'react-router-dom'
 import { Transition } from '@headlessui/react'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { AiOutlineClose } from 'react-icons/ai'
 import { getGlobalData } from 'utils/API/CoinGeckoAPI'
+import SidenavItem from './Item'
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -35,16 +37,13 @@ const Header = () => {
         leave='transition ease-in-out duration-200 transform'
         leaveFrom='translate-x-0'
         leaveTo='-translate-x-full'>
-        <div className='z-10 inset-0 w-screen h-screen overflow-y-auto p-3 mt-[-50px] bg-whiteBackground dark:bg-darkBackground dark:bg-darkModal rounded-md bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-70 shadow'>
+        <div className='z-10 inset-0 w-screen h-screen overflow-y-auto p-3 mt-[-50px] duration-200 bg-whiteBackground dark:bg-darkBackground bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-70 shadow'>
           <div className='flex items-center justify-between'>
             <div className='flex gap-2 items-center'>
               <NavLink to={`/`} className='flex items-center gap-2'>
                 <img src={CryptoFeedLogo} alt='logo' className='w-5' />
                 <p className='font-bold text-primary'>CRYPTOFEED</p>
               </NavLink>
-              <div>
-                <DarkModeButton />
-              </div>
             </div>
             <div className='cursor-pointer' onClick={() => setIsOpen(!isOpen)}>
               <AiOutlineClose className='text-primary' />
@@ -53,13 +52,11 @@ const Header = () => {
           <div className='border-[1px] w-full mt-3 border-primary shadow-primary'></div>
           <div>
             <div className='flex flex-col py-2 mt-2 space-y-4'>
-              <a href='/#' className='duration-200 text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary text-md'>კრიპტოვალუტები</a>
-              <NavLink to={`/exchanges`}>
-                <p className='duration-200 text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary text-sm'>ბირჟები</p>
-              </NavLink>
-              <a href='/#' className='duration-200 text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary text-md'>NFT</a>
-              <a href='/#' className='duration-200 text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary text-md'>პროდუქტები</a>
+              <SidenavItem menuItem={menuItem} />
             </div>
+          </div>
+          <div>
+            <DarkModeButton />
           </div>
         </div>
       </Transition>
@@ -95,12 +92,7 @@ const Header = () => {
                 </NavLink>
               </div>
               <div className='space-x-5 hidden md:flex'>
-                <a href='/#' className='duration-200 text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary text-sm'>კრიპტოვალუტები</a>
-                <NavLink to={`/exchanges`}>
-                  <p className='duration-200 text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary text-sm'>ბირჟები</p>
-                </NavLink>
-                <a href='/#' className='duration-200 text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary text-sm'>NFT</a>
-                <a href='/#' className='duration-200 text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary text-sm'>პროდუქტები</a>
+                <SidenavItem menuItem={menuItem} />
               </div>
             </div>
             <div className='hidden md:flex'>
