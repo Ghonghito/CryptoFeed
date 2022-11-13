@@ -19,7 +19,7 @@ const Index = () => {
       {exchangesData.status === 200 ? (
         <div className='flex overflow-y-auto'>
           <table className='w-full max-w-7xl mx-auto px-4 sm:px-6 text-sm text-left'>
-            <thead className='text-gray-500 duration-200 bg-zinc-100 dark:bg-zinc-800'>
+            <thead className='text-gray-500 duration-200'>
               <tr>
                 <th scope='col' className='px-6 py-3'>
                   #
@@ -34,7 +34,7 @@ const Index = () => {
                   წყვილი
                 </th>
                 <th scope='col' className='px-6 py-3'>
-                  იურისდიქცია
+                  ქვეყანა
                 </th>
                 <th scope='col' className='px-6 py-3'>
                   დომინირება

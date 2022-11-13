@@ -30,14 +30,14 @@ const Header = () => {
   return (
     <div>
       <Transition show={isOpen}
-        className='fixed h-screen flex md:hidden mt-12'
+        className='fixed h-screen flex md:hidden mt-12 z-50'
         enter='transition ease-in-out duration-200 transform'
         enterFrom='-translate-x-full'
         enterTo='translate-x-0'
         leave='transition ease-in-out duration-200 transform'
         leaveFrom='translate-x-0'
         leaveTo='-translate-x-full'>
-        <div className='z-10 inset-0 w-screen h-screen overflow-y-auto p-3 mt-[-50px] duration-200 bg-whiteBackground dark:bg-darkBackground bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-70 shadow'>
+        <div className='inset-0 w-screen h-screen overflow-y-auto p-3 mt-[-50px] duration-200 bg-whiteBackground dark:bg-darkBackground'>
           <div className='flex items-center justify-between'>
             <div className='flex gap-2 items-center'>
               <NavLink to={`/`} className='flex items-center gap-2'>
@@ -49,13 +49,13 @@ const Header = () => {
               <AiOutlineClose className='text-primary' />
             </div>
           </div>
-          <div className='border-[1px] w-full mt-3 border-primary'></div>
+          <div className='border-[1px] w-full mt-3 border-zinc-200 dark:border-zinc-800'></div>
           <div>
             <div className='flex flex-col py-2 mt-2 space-y-4'>
               <SidenavItem menuItem={menuItem} mobile={true} />
             </div>
           </div>
-          <div className='border-[1px] w-full mt-3 border-primary'></div>
+          <div className='border-[1px] w-full mt-3 border-zinc-200 dark:border-zinc-800'></div>
           <div className='flex'>
             <div className='bg-zinc-100 dark:bg-zinc-800 p-2 rounded-md mt-3 dark:shadow-md'>
               <DarkModeButton />
