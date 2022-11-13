@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Typography from 'components/Typography'
+import Alert from 'components/Alerts'
 import { getExchanges } from 'utils/API/CryptoRankAPI'
 
 const Index = () => {
@@ -16,7 +17,10 @@ const Index = () => {
   }, [])
 
   return (
-    <div>
+    <div className='w-full max-w-7xl mx-auto px-4 sm:px-6 text-sm text-left'>
+      <div className='w-full py-2'>
+        <Alert variant='info' text='ინფორმაცია აღებულია CryptoRank-დან.' />
+      </div>
       {exchangesData.status === 200 ? (
         <div className='flex overflow-y-auto'>
           <table className='w-full max-w-7xl mx-auto px-4 sm:px-6 text-sm text-left'>

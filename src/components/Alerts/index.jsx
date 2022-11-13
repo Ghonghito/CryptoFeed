@@ -6,11 +6,11 @@ const index = ({ variant, text }) => {
   return (
     <div>
       {variant === 'info' ? (
-        <div className='flex p-3 text-sm bg-teal-100 rounded-lg border-[1px] border-teal-500 shadow-md' role='alert'>
-          <MdInfo className='text-teal-500 inline flex-shrink-0 text-[20px] mr-2' />
+        <div className='flex p-2 md:p-3 text-sm bg-blue-100 dark:bg-blue-900 rounded-lg border-[1px] border-blue-500 shadow-md' role='alert'>
+          <MdInfo className='text-blue-500 inline flex-shrink-0 text-[20px] mr-2' />
           <span className='sr-only'>Info</span>
           <div>
-            <p className='text-zinc-900 text-sm w-full font-semibold'>{text}</p>
+            <p className='text-zinc-900 dark:text-white text-sm w-full font-semibold'>{text}</p>
           </div>
         </div>
       ) : null}
