@@ -2,23 +2,32 @@ import React, { useState, useEffect } from 'react'
 import Alert from 'components/Alerts'
 import Typography from 'components/Typography'
 import LoadingLogo from 'components/LoadingLogo'
+import ReactPaginate from 'react-paginate';
 import { NavLink } from 'react-router-dom'
 import { getCryptoData } from 'utils/API/CoinGeckoAPI'
 /* import { Sparklines, SparklinesLine } from 'react-sparklines'; */
 
 const Index = () => {
   const [data, setData] = useState([])
-  const [isLoading, setIsLoading] = useState(true)
+  const [isLoading, setIsLoading] = useState(Boolean)
 
-  const getData = async () => {
+  const getData = async (page) => {
     setIsLoading(true)
-    const getCurrencies = await getCryptoData()
+    const getCurrencies = await getCryptoData(page)
+    console.log(getCurrencies)
     setData(getCurrencies)
-    setIsLoading(!isLoading)
+    setIsLoading(false)
   }
 
+  const changePage = ({ selected }) => {
+    console.log(selected + 1)
+    getData(selected + 1)
+  };
+
+  const pageCount = Math.ceil(13246 / 100);
+
   useEffect(() => {
-    getData()
+    getData(1)
     // eslint-disable-next-line
   }, [])
 
@@ -27,7 +36,7 @@ const Index = () => {
       {!isLoading ? (
         <div>
           {data.status === 200 ? (
-            <div className='flex overflow-y-auto'>
+            <div className='flex flex-col overflow-y-auto'>
               <table className='w-full max-w-7xl mx-auto px-4 sm:px-6 text-sm text-left'>
                 <thead className='text-gray-500 text-xs'>
                   <tr>
@@ -110,7 +119,6 @@ const Index = () => {
                 </tbody>
               </table>
             </div>
-
           ) : (
             <div className='flex justify-center w-full mt-3'>
               <Alert variant='error' text='დაფიქსირდა შეცდომა! გთხოვთ ცადოთ თავიდან!' />
@@ -122,6 +130,21 @@ const Index = () => {
           <LoadingLogo />
         </div>
       )}
+      <div className='flex justify-center mt-3'>
+        <div className=''>
+          <ReactPaginate
+            previousLabel={""}
+            nextLabel={""}
+            breakLabel="..."
+            pageRangeDisplayed={2}
+            pageCount={pageCount}
+            onPageChange={changePage}
+            containerClassName={"paginationBttns duration-200 flex flex-row gap-3 py-2 rounded-lg bg-gray-200 dark:bg-zinc-800 duration-200 text-zinc-900 dark:text-gray-400"}
+            disabledClassName={"text-zinc-200"}
+            activeClassName={"paginationActive rounded-lg bg-blue-500 px-2 text-white"}
+          />
+        </div>
+      </div>
     </div>
   )
 }
