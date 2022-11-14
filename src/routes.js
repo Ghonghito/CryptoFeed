@@ -3,30 +3,35 @@ export const menuItem = [
     type: 'noncollapsible',
     path: '/',
     key: 'cryptocurrencies',
-    name: 'კრიპტოვალუტები'
+    name: 'კრიპტოვალუტები',
+    animation: ''
   },
   {
     type: 'noncollapsible',
     path: '/exchanges',
     key: 'exchanges',
-    name: 'ბირჟები'
+    name: 'ბირჟები',
+    animation: ''
   },
   {
     type: 'noncollapsible',
     path: '/nfts',
     key: 'nfts',
-    name: 'NFT'
+    name: 'NFT',
+    animation: ''
   },
   {
     type: 'noncollapsible',
     path: '/products',
     key: 'products',
-    name: 'პროდუქტები'
+    name: 'პროდუქტები',
+    animation: ''
   },
   {
     type: 'noncollapsible',
     path: '/news',
     key: 'news',
-    name: 'სიახლეები'
+    name: 'სიახლეები',
+    animation: 'ping'
   }
 ]
