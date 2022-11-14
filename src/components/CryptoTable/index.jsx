@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Alert from 'components/Alerts'
 import Typography from 'components/Typography'
+import LoadingLogo from 'components/LoadingLogo'
 import { NavLink } from 'react-router-dom'
 import { getCryptoData } from 'utils/API/CoinGeckoAPI'
 /* import { Sparklines, SparklinesLine } from 'react-sparklines'; */
@@ -116,7 +117,11 @@ const Index = () => {
             </div>
           )}
         </div>
-      ) : null}
+      ) : (
+        <div>
+          <LoadingLogo />
+        </div>
+      )}
     </div>
   )
 }
