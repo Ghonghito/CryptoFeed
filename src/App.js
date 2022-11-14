@@ -5,6 +5,7 @@ import Main from 'pages/Main'
 import CoinPage from 'pages/CoinPage'
 import Exchanges from 'pages/Exchanges'
 import News from 'pages/News'
+import Footer from 'components/Footer'
 
 function App() {
 
@@ -23,7 +24,7 @@ function App() {
   }, [])
   /* bg-gradient-to-b from-[#081120] to-[#18181b] */
   return (
-    <div className='duration-200 min-h-screen bg-whiteBackground dark:darkGradient'>
+    <div className='flex flex-col duration-200 min-h-screen bg-whiteBackground dark:darkGradient'>
       <BrowserRouter>
         <Header />
         <Routes>
@@ -33,6 +34,7 @@ function App() {
           <Route path='/exchanges' element={<Exchanges />} />
           <Route path='/news' element={<News />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </div>
   );
