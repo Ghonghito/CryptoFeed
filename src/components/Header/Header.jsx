@@ -105,6 +105,11 @@ const Header = () => {
             </div>
           </div>
         </div>
+        <div className='flex md:hidden justify-center'>
+          <div className='mb-3 w-full px-3'>
+            <Search isMobile={true} />
+          </div>
+        </div>
         <div className='border-[1px] duration-200 border-zinc-200 dark:border-zinc-800'></div>
         <div className='flex md:hidden'>
           <div className='overflow-y-auto'>

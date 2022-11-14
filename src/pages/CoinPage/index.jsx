@@ -11,20 +11,20 @@ const Index = () => {
   const location = useLocation();
   const { pathname } = location;
   const coinId = pathname.split('/').slice(1)[1];
-  const [isLoading, setIsLoading] = useState(true)
+  const [isLoading, setIsLoading] = useState(Boolean)
 
   const getData = async () => {
     setIsLoading(true)
     const getInfo = await getCoinInfo(coinId)
     console.log(getInfo)
     setData(getInfo)
-    setIsLoading(!isLoading)
+    setIsLoading(false)
   }
 
   useEffect(() => {
     getData()
     // eslint-disable-next-line
-  }, [])
+  }, [coinId])
 
   return (
     <div>
