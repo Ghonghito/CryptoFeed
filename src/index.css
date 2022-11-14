@@ -17,6 +17,9 @@
   }
 
   .paginationBttns a:hover {
+    background-color: #3A83F6;
+    padding: 2px 2px;
+    border-radius: 8px;
     color: white;
   }
 
