@@ -4,7 +4,6 @@ import Typography from 'components/Typography'
 import { BsFillArrowRightCircleFill } from 'react-icons/bs'
 
 const index = ({ data }) => {
-  console.log(data)
   return (
     <div>
       {data.map((x) => (

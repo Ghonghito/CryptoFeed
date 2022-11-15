@@ -11,7 +11,6 @@ const Index = () => {
   const getData = async () => {
     setIsLoading(true)
     const data = await getExchanges()
-    console.log(data)
     setExchangesData(data)
     setIsLoading(!isLoading)
   }

@@ -14,13 +14,11 @@ const Index = () => {
   const getData = async (page) => {
     setIsLoading(true)
     const getCurrencies = await getCryptoData(page)
-    console.log(getCurrencies)
     setData(getCurrencies)
     setIsLoading(false)
   }
 
   const changePage = ({ selected }) => {
-    console.log(selected + 1)
     getData(selected + 1)
   };
 

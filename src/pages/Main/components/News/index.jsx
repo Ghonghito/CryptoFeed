@@ -6,7 +6,6 @@ const index = () => {
 
   const getCryptoNewsData = async () => {
     const data = await getNews()
-    console.log(data)
   }
 
   getCryptoNewsData()

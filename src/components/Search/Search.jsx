@@ -13,7 +13,6 @@ const Search = ({ isMobile }) => {
     setSearchResult([])
     if (String(value).length > 2) {
       const data = await getSearch(value)
-      console.log(data)
       setSearchResult(data.data.coins)
     }
   }
