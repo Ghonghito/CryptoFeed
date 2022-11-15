@@ -6,6 +6,7 @@ import Tag from 'components/Tags'
 import Typography from 'components/Typography'
 import LoadingLogo from 'components/LoadingLogo'
 import PriceConverter from './components/PriceConverter'
+import CryptoStatistics from './components/CryptoStatistics'
 import { useLocation } from 'react-router-dom';
 import { getCoinInfo } from 'utils/API/CoinGeckoAPI';
 
@@ -19,6 +20,7 @@ const Index = () => {
   const getData = async () => {
     setIsLoading(true)
     const getInfo = await getCoinInfo(coinId)
+    console.log(getInfo.data)
     setData(getInfo)
     setIsLoading(false)
   }
@@ -65,7 +67,7 @@ const Index = () => {
                     </div>
                   </div>
                   <SociaLinks data={data.data.links} />
-                  <div className='mt-3 w-full md:w-[380px]'>
+                  <div className='mt-3 w-full md:w-[400px]'>
                     <PriceConverter data={data.data.market_data} coinLogo={data.data.image.large} />
                   </div>
                   <div className='flex flex-col md:hidden w-full'>
@@ -89,7 +91,7 @@ const Index = () => {
                       name='TOTAL SUPPLY' />
                   </div>
                 </div>
-                <div className='gap-2 hidden md:flex md:w-[550px]'>
+                <div className='gap-2 hidden md:flex md:w-full'>
                   <div className='w-full'>
                     <div>
                       <Typography>{data.data.name}-ის ფასი</Typography>
@@ -131,6 +133,12 @@ const Index = () => {
                       />
                     </div>
                   </div>
+                </div>
+              </div>
+              <div className='border-[1px] mt-3 mb-3 duration-200 border-zinc-200 dark:border-zinc-800'></div>
+              <div className='flex justify-end'>
+                <div className='w-full md:w-[450px] mt-3 mb-5'>
+                  <CryptoStatistics data={data.data.market_data} symbol={String(data.data.symbol).toUpperCase()} />
                 </div>
               </div>
             </div>

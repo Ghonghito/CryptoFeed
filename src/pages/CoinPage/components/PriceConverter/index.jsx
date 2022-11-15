@@ -3,11 +3,9 @@ import Card from 'components/Cards/Card'
 import Typography from 'components/Typography'
 
 const index = ({ data, coinLogo }) => {
-  console.log(data)
 
   const calculateCoinInUSD = (e) => {
     const value = e.target.value
-    console.log(value)
     const usdValue = document.getElementById('toCoin')
     const currentCoinPrice = data.current_price.usd
     const result = Number(currentCoinPrice) * value
@@ -16,7 +14,6 @@ const index = ({ data, coinLogo }) => {
 
   const calculateUSDInCoin = (e) => {
     const value = e.target.value
-    console.log(value)
     const coinValue = document.getElementById('fromCoin')
     const currentCoinPrice = data.current_price.usd
     const result = Number(value) / currentCoinPrice
