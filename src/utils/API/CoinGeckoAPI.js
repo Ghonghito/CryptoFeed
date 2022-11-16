@@ -48,3 +48,10 @@ export const getExchanges = async (id) => {
     .catch(() => 'error');
   return json
 }
+
+export const getMarkets = async (id) => {
+  const json = await axios(`https://api.coingecko.com/api/v3/coins/${id}/tickers?include_exchange_logo=true&order=trust_score_desc`)
+    .then((response) => response)
+    .catch(() => 'error');
+  return json
+}

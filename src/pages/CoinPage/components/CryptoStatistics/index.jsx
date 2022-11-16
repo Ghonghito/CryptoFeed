@@ -4,7 +4,6 @@ import Typography from 'components/Typography'
 import Item from './Item'
 
 const index = ({ data, symbol }) => {
-  console.log(data)
   return (
     <div>
       <Card className='p-3'>
@@ -17,7 +16,7 @@ const index = ({ data, symbol }) => {
             name={`${symbol} ფასი`} />
           <Item
             data={`$${Number(data.low_24h.usd).toLocaleString('en-US')} / $${Number(data.high_24h.usd).toLocaleString('en-US')}`}
-            name='24სთ მაღალი / დაბალი' />
+            name='24სთ High / Low' />
           <Item
             data={`$${Number(data.total_volume.usd).toLocaleString('en-US')}`}
             name='ნავაჭრი' />

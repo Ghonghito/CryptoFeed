@@ -7,6 +7,7 @@ import Typography from 'components/Typography'
 import LoadingLogo from 'components/LoadingLogo'
 import PriceConverter from './components/PriceConverter'
 import CryptoStatistics from './components/CryptoStatistics'
+import StatisticsTab from './components/StatistictsTab'
 import { useLocation } from 'react-router-dom';
 import { getCoinInfo } from 'utils/API/CoinGeckoAPI';
 
@@ -20,7 +21,6 @@ const Index = () => {
   const getData = async () => {
     setIsLoading(true)
     const getInfo = await getCoinInfo(coinId)
-    console.log(getInfo.data)
     setData(getInfo)
     setIsLoading(false)
   }
@@ -105,7 +105,7 @@ const Index = () => {
                       </div>
                     </div>
                     <div className='border-[1px] mt-3 mb-3 duration-200 border-zinc-200 dark:border-zinc-800'></div>
-                    <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-2 gap-2 w-full'>
+                    <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-2 gap-2 w-full gap-2'>
                       <CoinInfoCard
                         name='კაპიტალიზაცია'
                         data={`$${Number(data.data.market_data.market_cap.usd).toLocaleString('en-US')}`}
@@ -136,9 +136,16 @@ const Index = () => {
                 </div>
               </div>
               <div className='border-[1px] mt-3 mb-3 duration-200 border-zinc-200 dark:border-zinc-800'></div>
-              <div className='flex justify-end'>
-                <div className='w-full md:w-[450px] mt-3 mb-5'>
-                  <CryptoStatistics data={data.data.market_data} symbol={String(data.data.symbol).toUpperCase()} />
+              <div className='flex flex-col md:flex-row md:justify-between gap-2'>
+                <div className='w-full mt-3 mb-5'>
+                  <div className=''>
+                    <StatisticsTab data={data} />
+                  </div>
+                </div>
+                <div>
+                  <div className='w-full md:w-[350px] mt-3 mb-5'>
+                    <CryptoStatistics data={data.data.market_data} symbol={String(data.data.symbol).toUpperCase()} />
+                  </div>
                 </div>
               </div>
             </div>
