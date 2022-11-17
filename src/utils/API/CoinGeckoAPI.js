@@ -55,3 +55,10 @@ export const getMarkets = async (id) => {
     .catch(() => 'error');
   return json
 }
+
+export const getMarketChart = async (id, days) => {
+  const json = await axios(`https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=usd&days=${days}`)
+    .then((response) => response)
+    .catch(() => 'error');
+  return json
+}

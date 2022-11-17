@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react'
 import Alert from 'components/Alerts'
 import LoadingLogo from 'components/LoadingLogo'
 import Typography from 'components/Typography'
+import Chart from './Chart'
 import { Tab } from '@headlessui/react'
 import { getMarkets } from 'utils/API/CoinGeckoAPI'
 
 const Index = ({ data }) => {
-  console.log(data.data.market_data)
   const [marketData, setMarketData] = useState([])
   const [isLoading, setIsLoading] = useState(Boolean)
 
@@ -59,8 +59,9 @@ const Index = ({ data }) => {
         <Tab.Panels>
           <Tab.Panel>
             <div className='mt-2'>
+              <Chart id={data.data.id} />
               {data.status === 200 ? (
-                <div className='flex flex-col overflow-y-auto rounded-lg'>
+                <div className='flex flex-col overflow-y-auto rounded-lg mt-3'>
                   <table className='w-full max-w-7xl mx-auto px-4 sm:px-6 text-sm text-left'>
                     <thead className='text-gray-500 text-xs duration-200 bg-zinc-100 dark:bg-zinc-800'>
                       <tr>
