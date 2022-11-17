@@ -73,7 +73,7 @@ const Chart = ({ id }) => {
 
     series: [{
       type: 'area',
-      name: 'Price',
+      name: 'ფასი',
       data: chartData.status === 200 ? chartData.data.prices : null
     }]
   }
