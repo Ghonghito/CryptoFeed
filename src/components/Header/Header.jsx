@@ -3,6 +3,7 @@ import Search from '../Search/Search'
 import DarkModeButton from 'components/DarkModeButton'
 import CryptoFeedLogo from 'assets/images/CryptoFeedLogo.svg'
 import Typography from 'components/Typography'
+import MarketOverview from './MarketOverview'
 import { menuItem } from 'routes'
 import { NavLink } from 'react-router-dom'
 import { Transition } from '@headlessui/react'
@@ -66,22 +67,9 @@ const Header = () => {
       </Transition>
       <div>
         <div className='hidden md:flex'>
-          {Number(globalData.status) === 200 ? (
-            <div className='w-full max-w-7xl mx-auto px-4 sm:px-6'>
-              <div className='flex justify-between items-center py-3 md:justify-between md:space-x-10'>
-                <div className='flex justify-start lg:flex-1 items-center space-x-8'>
-                  <div className='space-x-5 hidden md:flex text-xs'>
-                    <Typography>ქოინები: <span className='text-primary'>{Number(globalData.data.data.active_cryptocurrencies).toLocaleString('en-US')}</span></Typography>
-                    <Typography>ბირჟები: <span className='text-primary'>{Number(globalData.data.data.markets).toLocaleString('en-US')}</span></Typography>
-                    <Typography>კაპიტალიზაცია: <span className='text-primary'>${Number(globalData.data.data.total_market_cap.usd).toLocaleString('en-US')}</span></Typography>
-                    <Typography>24სთ ნავაჭრი: <span className='text-primary'>${Number(globalData.data.data.total_volume.usd).toLocaleString('en-US')}</span></Typography>
-                    <Typography>BTC დომინირება: <span className='text-primary'>{Number(globalData.data.data.market_cap_percentage.btc).toLocaleString('en-US')}%</span></Typography>
-                  </div>
-                </div>
-                <DarkModeButton />
-              </div>
-            </div>
-          ) : null}
+          <div className='w-full max-w-7xl mx-auto px-4 sm:px-6'>
+            <MarketOverview globalData={globalData} />
+          </div>
         </div>
         <div className='border-[1px] duration-200 border-zinc-200 dark:border-zinc-800'></div>
         <div className='w-full max-w-7xl mx-auto px-4 sm:px-6'>
@@ -113,24 +101,9 @@ const Header = () => {
         <div className='border-[1px] duration-200 border-zinc-200 dark:border-zinc-800'></div>
         <div className='flex md:hidden'>
           <div className='overflow-y-auto'>
-            {Number(globalData.status) === 200 ? (
-              <div className='px-4 sm:px-6'>
-                <div className='flex justify-between items-center mt-2 mb-2 md:justify-between md:space-x-10'>
-                  <div className='flex justify-start lg:flex-1 items-center space-x-8'>
-                    <div className='space-x-5 flex text-xs'>
-                      <Typography className='flex items-center gap-1'>ქოინები: <span className='text-primary'>{Number(globalData.data.data.active_cryptocurrencies).toLocaleString('en-US')}</span></Typography>
-                      <Typography className='flex items-center gap-1'>ბირჟები: <span className='text-primary'>{Number(globalData.data.data.markets).toLocaleString('en-US')}</span></Typography>
-                      <Typography className='flex items-center gap-1'>კაპიტალიზაცია: <span className='text-primary'>${Number(globalData.data.data.total_market_cap.usd).toLocaleString('en-US')}</span></Typography>
-                      <Typography className='flex items-center gap-1 whitespace-nowrap'>ნავაჭრი (24სთ): <span className='text-primary'>${Number(globalData.data.data.total_volume.usd).toLocaleString('en-US')}</span></Typography>
-                      <Typography className='flex items-center gap-1 whitespace-nowrap'>BTC დომინირება: <span className='text-primary'>{Number(globalData.data.data.market_cap_percentage.btc).toLocaleString('en-US')}%</span></Typography>
-                    </div>
-                  </div>
-                  <div className='hidden md:flex'>
-                    <DarkModeButton />
-                  </div>
-                </div>
-              </div>
-            ) : null}
+            <div className='w-full max-w-7xl mx-auto px-4 sm:px-6'>
+              <MarketOverview globalData={globalData} isMobile={true} />
+            </div>
           </div>
           <div className='border-[1px] duration-200 border-zinc-200 dark:border-zinc-800'></div>
         </div>
