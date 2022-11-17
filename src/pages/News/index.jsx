@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import NewsCard from './components/NewsCard'
 import Alert from 'components/Alerts'
 import LoadingLogo from 'components/LoadingLogo'
+import Layout from 'components/Layout'
 import { getNews } from 'utils/API/CryptoRankAPI'
 
 const Index = () => {
@@ -21,7 +22,7 @@ const Index = () => {
   }, [])
 
   return (
-    <div className='w-full max-w-7xl mx-auto px-4 sm:px-6 mt-2'>
+    <Layout className='mt-2'>
       <div className='w-full'>
         <Alert variant='info' text='ინფორმაცია აღებულია CryptoRank-დან.' />
       </div>
@@ -32,11 +33,11 @@ const Index = () => {
           ) : null}
         </div>
       ) : (
-        <div>
+        <div className='mt-3'>
           <LoadingLogo />
         </div>
       )}
-    </div>
+    </Layout>
   )
 }
 

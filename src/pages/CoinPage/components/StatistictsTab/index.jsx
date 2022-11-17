@@ -62,7 +62,7 @@ const Index = ({ data }) => {
               <Chart id={data.data.id} />
               {data.status === 200 ? (
                 <div className='flex flex-col overflow-y-auto rounded-lg mt-3'>
-                  <table className='w-full max-w-7xl mx-auto px-4 sm:px-6 text-sm text-left'>
+                  <table className='w-full text-sm text-left'>
                     <thead className='text-gray-500 text-xs duration-200 bg-zinc-100 dark:bg-zinc-800'>
                       <tr>
                         <th scope='col' className='px-6 py-3'>
@@ -133,7 +133,7 @@ const Index = ({ data }) => {
               <div>
                 {marketData.status === 200 ? (
                   <div className='flex flex-col overflow-y-auto'>
-                    <table className='w-full max-w-7xl mx-auto px-4 sm:px-6 text-sm text-left'>
+                    <table className='w-full text-sm text-left'>
                       <thead className='text-gray-500 text-xs'>
                         <tr>
                           <th scope='col' className='px-6 py-3'>
