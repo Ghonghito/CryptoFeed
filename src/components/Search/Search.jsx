@@ -11,7 +11,7 @@ const Search = ({ isMobile }) => {
   const getSearchData = async (e) => {
     const value = e.target.value
     setSearchResult([])
-    if (String(value).length > 2) {
+    if (String(value).length >= 2) {
       const data = await getSearch(value)
       setSearchResult(data.data.coins)
     }
@@ -25,9 +25,9 @@ const Search = ({ isMobile }) => {
       {searchResult.length > 0 && (
         <div>
           {openSearch && (
-            <div className='absolute z-50 mt-2 h-[350px] w-full md:w-auto pr-6 md:pr-0 overflow-y-auto'>
+            <div className='absolute z-50 mt-2 h-[350px] w-full md:w-auto pr-6 md:pr-0 overflow-y-auto rounded-lg'>
               <div className='w-full shadow-md border-gray-500'>
-                <div className='p-2 bg-[#E5E7EB] dark:bg-[#181818] rounded-lg'>
+                <div className='p-2 bg-[#E5E7EB] dark:bg-[#181818]'>
                   {searchResult.map((coin) => (
                     <div key={coin.id} onClick={() => setOpenSearch(!openSearch)} className='mt-2'>
                       <NavLink to={`/currency/${coin.id}`}  >
