@@ -128,7 +128,7 @@ const Index = () => {
           <LoadingLogo />
         </div>
       )}
-      <div className='flex justify-center mt-3'>
+      <div className='flex justify-center mt-3 mb-3'>
         <div className=''>
           <ReactPaginate
             previousLabel={""}

@@ -107,7 +107,7 @@ const Index = () => {
                         </div>
                       </div>
                       <div className='border-[1px] mt-3 mb-3 duration-200 border-zinc-200 dark:border-zinc-800'></div>
-                      <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-2 gap-2 w-full gap-2'>
+                      <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-2 w-full gap-2'>
                         <CoinInfoCard
                           name='კაპიტალიზაცია'
                           data={`$${Number(data.data.market_data.market_cap.usd).toLocaleString('en-US')}`}
