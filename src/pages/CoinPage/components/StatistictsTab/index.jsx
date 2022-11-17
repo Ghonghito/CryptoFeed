@@ -19,6 +19,7 @@ const Index = ({ data }) => {
   const getMarketsData = async () => {
     setIsLoading(true)
     const getData = await getMarkets(data.data.id)
+    console.log(getData)
     setMarketData(getData)
     setIsLoading(false)
   }
@@ -166,9 +167,7 @@ const Index = ({ data }) => {
                               </div>
                             </th>
                             <th className='px-6 py-4 w-[150px]'>
-                              <Typography color={`${x.price_change_percentage_1y > 0 ? 'text-green-500' : 'text-red-500'}`}>
-                                {x.price_change_percentage_1y}
-                              </Typography>
+                              <Typography>{`${x.base}/${x.target}`}</Typography>
                             </th>
                             <th className='px-6 py-4 w-[150px]'>
                               <Typography>${Number(x.last).toLocaleString('en-US')}</Typography>
@@ -180,7 +179,7 @@ const Index = ({ data }) => {
                               <Typography>{Number(x.bid_ask_spread_percentage).toLocaleString('en-US')}%</Typography>
                             </th>
                             <th className='px-6 py-4 w-[150px]'>
-                              <div className={`w-[20px] h-[20px] rounded-full bg-${x.trust_score}-500`}></div>
+                              <div className={`bg-${x.trust_score}-500 w-[15px] h-[15px] rounded-full`}></div>
                             </th>
                           </tr>
                         ))}
