@@ -3,6 +3,7 @@ import BigCard from 'components/Cards/BigCard'
 import TrendingCoinsCard from 'components/Cards/TrendingCoinsCard'
 import Typography from 'components/Typography'
 import { getGlobalData, getTrendingCoins } from 'utils/API/CoinGeckoAPI';
+import { formatNumber } from 'utils/Helpers'
 
 function App() {
   const [data, setData] = useState([])
@@ -57,6 +58,17 @@ function App() {
         </div>
       </div>
       <div>
+        {data.status === 200 && (
+          <Typography className='text-sm mb-3 w-full'>
+            კრიპტოვალუტის გლობალური საბაზრო კაპიტალი დღეს<span className={`${Number(data.data.data.market_cap_change_percentage_24h_usd) > 0 ? 'text-green-500' : 'text-red-500'} mr-2 ml-2 font-bold`}>
+              ${formatNumber(Number(data.data.data.total_market_cap.usd))}
+            </span>დოლარია, რაც
+            <span className={`${Number(data.data.data.market_cap_change_percentage_24h_usd) > 0 ? 'text-green-500' : 'text-red-500'} mr-2 ml-2 font-bold`}>
+              {Number(data.data.data.market_cap_change_percentage_24h_usd).toLocaleString('en-US')}%
+            </span>
+            ცვლილებაა ბოლო 24 საათის განმავლობაში.
+          </Typography>
+        )}
         <div className='flex md:hidden items-center gap-2'>
           <div onClick={() => setShowStats(!showStats)} className={`${showStats ? 'bg-blue-600' : 'bg-zinc-500'} inline-flex h-6 w-11 items-center rounded-full`}>
             <div className={`${showStats ? 'translate-x-6' : 'translate-x-1'} h-4 w-4 transform rounded-full bg-white transition`}></div>
