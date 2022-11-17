@@ -9,6 +9,7 @@ const Chart = ({ id }) => {
 
   const getMarketsData = async (coin, day) => {
     const getChart = await getMarketChart(coin, day)
+    console.log(getChart)
     setChartData(getChart)
   }
 
@@ -80,34 +81,36 @@ const Chart = ({ id }) => {
 
   return (
     <div>
-      <div className='flex overflow-y-hidden flex-row items-center gap-2 mb-3'>
-        <div onClick={() => getMarketsData(id, 1)} className='duration-200 bg-zinc-100 dark:bg-zinc-800 px-3 py-1.5 rounded-lg cursor-pointer hover:scale-95'>
-          <Typography className='text-sm block whitespace-nowrap'>1 დღე</Typography>
-        </div>
-        <div onClick={() => getMarketsData(id, 7)} className='duration-200 bg-zinc-100 dark:bg-zinc-800 px-3 py-1.5 rounded-lg cursor-pointer hover:scale-95'>
-          <Typography className='text-sm block whitespace-nowrap'>1 კვირა</Typography>
-        </div>
-        <div onClick={() => getMarketsData(id, 30)} className='duration-200 bg-zinc-100 dark:bg-zinc-800 px-3 py-1.5 rounded-lg cursor-pointer hover:scale-95'>
-          <Typography className='text-sm block whitespace-nowrap'>30 დღე</Typography>
-        </div>
-        <div onClick={() => getMarketsData(id, 90)} className='duration-200 bg-zinc-100 dark:bg-zinc-800 px-3 py-1.5 rounded-lg cursor-pointer hover:scale-95'>
-          <Typography className='text-sm block whitespace-nowrap'>90 დღე</Typography>
-        </div>
-        <div onClick={() => getMarketsData(id, 180)} className='duration-200 bg-zinc-100 dark:bg-zinc-800 px-3 py-1.5 rounded-lg cursor-pointer hover:scale-95'>
-          <Typography className='text-sm block whitespace-nowrap'>180 დღე</Typography>
-        </div>
-        <div onClick={() => getMarketsData(id, 365)} className='duration-200 bg-zinc-100 dark:bg-zinc-800 px-3 py-1.5 rounded-lg cursor-pointer hover:scale-95'>
-          <Typography className='text-sm block whitespace-nowrap'>1 წელი</Typography>
-        </div>
-        <div onClick={() => getMarketsData(id, 'max')} className='duration-200 bg-zinc-100 dark:bg-zinc-800 px-3 py-1.5 rounded-lg cursor-pointer hover:scale-95'>
-          <Typography className='text-sm block whitespace-nowrap'>MAX</Typography>
-        </div>
-      </div>
       {chartData.status === 200 ? (
-        <HighchartsReact
-          Highcharts={Highcharts}
-          options={options}
-        />
+        <div>
+          <div className='flex overflow-y-hidden flex-row items-center gap-2 mb-3'>
+            <div onClick={() => getMarketsData(id, 1)} className='duration-200 bg-zinc-100 dark:bg-zinc-800 px-3 py-1.5 rounded-lg cursor-pointer hover:scale-95'>
+              <Typography className='text-sm block whitespace-nowrap'>1 დღე</Typography>
+            </div>
+            <div onClick={() => getMarketsData(id, 7)} className='duration-200 bg-zinc-100 dark:bg-zinc-800 px-3 py-1.5 rounded-lg cursor-pointer hover:scale-95'>
+              <Typography className='text-sm block whitespace-nowrap'>1 კვირა</Typography>
+            </div>
+            <div onClick={() => getMarketsData(id, 30)} className='duration-200 bg-zinc-100 dark:bg-zinc-800 px-3 py-1.5 rounded-lg cursor-pointer hover:scale-95'>
+              <Typography className='text-sm block whitespace-nowrap'>30 დღე</Typography>
+            </div>
+            <div onClick={() => getMarketsData(id, 90)} className='duration-200 bg-zinc-100 dark:bg-zinc-800 px-3 py-1.5 rounded-lg cursor-pointer hover:scale-95'>
+              <Typography className='text-sm block whitespace-nowrap'>90 დღე</Typography>
+            </div>
+            <div onClick={() => getMarketsData(id, 180)} className='duration-200 bg-zinc-100 dark:bg-zinc-800 px-3 py-1.5 rounded-lg cursor-pointer hover:scale-95'>
+              <Typography className='text-sm block whitespace-nowrap'>180 დღე</Typography>
+            </div>
+            <div onClick={() => getMarketsData(id, 365)} className='duration-200 bg-zinc-100 dark:bg-zinc-800 px-3 py-1.5 rounded-lg cursor-pointer hover:scale-95'>
+              <Typography className='text-sm block whitespace-nowrap'>1 წელი</Typography>
+            </div>
+            <div onClick={() => getMarketsData(id, 'max')} className='duration-200 bg-zinc-100 dark:bg-zinc-800 px-3 py-1.5 rounded-lg cursor-pointer hover:scale-95'>
+              <Typography className='text-sm block whitespace-nowrap'>MAX</Typography>
+            </div>
+          </div>
+          <HighchartsReact
+            highcharts={Highcharts}
+            options={options}
+          />
+        </div>
       ) : null}
     </div>
   )

@@ -19,7 +19,6 @@ const Index = ({ data }) => {
   const getMarketsData = async () => {
     setIsLoading(true)
     const getData = await getMarkets(data.data.id)
-    console.log(getData)
     setMarketData(getData)
     setIsLoading(false)
   }
