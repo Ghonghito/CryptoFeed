@@ -9,7 +9,7 @@ const index = ({ name, data, percent }) => {
         <div className='flex items-center gap-1'>
           <Typography className='text-sm'>{name}</Typography>
           {percent && (
-            <Typography className='text-xs' color={`${Number(percent) > 0 ? 'text-green-500' : 'text-red-500'}`}>{percent}%</Typography>
+            <Typography className='text-xs' color={`${Number(percent) > 0 ? 'text-green-400' : 'text-red-400'}`}>{percent}%</Typography>
           )}
         </div>
         <Typography className='text-sm'>{data}</Typography>

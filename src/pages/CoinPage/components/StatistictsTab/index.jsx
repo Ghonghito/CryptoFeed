@@ -88,32 +88,32 @@ const Index = ({ data }) => {
                     <tbody>
                       <tr className='w-full cursor-pointer duratino-300 hover:bg-gray-200 dark:hover:bg-zinc-800'>
                         <th className='px-6 py-4 w-[150px]'>
-                          <Typography color={`${current_market_data.price_change_percentage_1h_in_currency.usd > 0 ? 'text-green-500' : 'text-red-500'}`}>
+                          <Typography color={`${current_market_data.price_change_percentage_1h_in_currency.usd > 0 ? 'text-green-400' : 'text-red-400'}`}>
                             {Number(current_market_data.price_change_percentage_1h_in_currency.usd).toLocaleString('en-us')}%
                           </Typography>
                         </th>
                         <th className='px-6 py-4 w-[150px]'>
-                          <Typography color={`${current_market_data.price_change_percentage_24h > 0 ? 'text-green-500' : 'text-red-500'}`}>
+                          <Typography color={`${current_market_data.price_change_percentage_24h > 0 ? 'text-green-400' : 'text-red-400'}`}>
                             {Number(current_market_data.price_change_percentage_24h).toLocaleString('en-us')}%
                           </Typography>
                         </th>
                         <th className='px-6 py-4 w-[150px]'>
-                          <Typography color={`${current_market_data.price_change_percentage_7d > 0 ? 'text-green-500' : 'text-red-500'}`}>
+                          <Typography color={`${current_market_data.price_change_percentage_7d > 0 ? 'text-green-400' : 'text-red-400'}`}>
                             {Number(current_market_data.price_change_percentage_7d).toLocaleString('en-us')}%
                           </Typography>
                         </th>
                         <th className='px-6 py-4 w-[150px]'>
-                          <Typography color={`${current_market_data.price_change_percentage_14d > 0 ? 'text-green-500' : 'text-red-500'}`}>
+                          <Typography color={`${current_market_data.price_change_percentage_14d > 0 ? 'text-green-400' : 'text-red-400'}`}>
                             {Number(current_market_data.price_change_percentage_14d).toLocaleString('en-us')}%
                           </Typography>
                         </th>
                         <th className='px-6 py-4 w-[150px]'>
-                          <Typography color={`${current_market_data.price_change_percentage_30d > 0 ? 'text-green-500' : 'text-red-500'}`}>
+                          <Typography color={`${current_market_data.price_change_percentage_30d > 0 ? 'text-green-400' : 'text-red-400'}`}>
                             {Number(current_market_data.price_change_percentage_30d).toLocaleString('en-us')}%
                           </Typography>
                         </th>
                         <th className='px-6 py-4 w-[150px]'>
-                          <Typography color={`${current_market_data.price_change_percentage_1y > 0 ? 'text-green-500' : 'text-red-500'}`}>
+                          <Typography color={`${current_market_data.price_change_percentage_1y > 0 ? 'text-green-400' : 'text-red-400'}`}>
                             {Number(current_market_data.price_change_percentage_1y).toLocaleString('en-us')}%
                           </Typography>
                         </th>

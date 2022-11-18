@@ -80,7 +80,7 @@ const Header = () => {
                   <p className='font-bold text-primary'>CRYPTOFEED</p>
                 </NavLink>
               </div>
-              <div className='space-x-5 hidden md:flex'>
+              <div className='space-x-5 hidden md:flex items-center'>
                 <SidenavItem menuItem={menuItem} />
               </div>
             </div>

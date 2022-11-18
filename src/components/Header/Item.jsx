@@ -1,11 +1,12 @@
 import React from 'react'
+import SidenavItemCollapse from './SidenavItemCollapse';
 import { useLocation, NavLink } from 'react-router-dom';
 
 const SidenavItem = ({ menuItem, mobile }) => {
   const location = useLocation();
   const { pathname } = location;
 
-  const renderRoutes = menuItem.map(({ type, path, name, key, animation }) => {
+  const renderRoutes = menuItem.map(({ type, path, name, key, animation, collapse }) => {
     let returnValue;
     const active = path === pathname
     if (type === 'noncollapsible') {
@@ -48,6 +49,10 @@ const SidenavItem = ({ menuItem, mobile }) => {
           )}
         </div>
       );
+    } else if (type === 'collapsible') {
+      returnValue = (
+        <SidenavItemCollapse name={name} key={key} path={path} collapse={collapse} isMobile={mobile} />
+      )
     }
     return returnValue;
   });

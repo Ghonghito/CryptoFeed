@@ -61,7 +61,7 @@ const index = ({ data }) => {
                     <a href={data.subreddit_url} target='_blank' rel='noreferrer' >
                       <Card className='px-3 py-1 hover:bg-gray-200 dark:hover:bg-zinc-900'>
                         <div className='flex items-center gap-1'>
-                          <BsReddit className='text-red-500' />
+                          <BsReddit className='text-red-400' />
                           <Typography className='text-sm'>Reddit</Typography>
                         </div>
                       </Card>

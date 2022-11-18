@@ -11,7 +11,7 @@ const Item = ({ name, data, percent }) => {
         ) : (
           <div className='flex items-center gap-1'>
             <Typography className='text-sm'>{data}</Typography>
-            <p className={`${Number(percent) > 0 ? 'text-green-400' : 'text-red-500'} text-sm`}>({Number(percent).toLocaleString('en-US')}%)</p>
+            <p className={`${Number(percent) > 0 ? 'text-red-400' : 'text-green-400'} text-sm`}>({Number(percent).toLocaleString('en-US')}%)</p>
           </div>
         )}
       </div>

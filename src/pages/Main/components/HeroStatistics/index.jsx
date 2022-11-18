@@ -60,10 +60,10 @@ function App() {
       <div>
         {data.status === 200 && (
           <Typography className='text-sm mb-3 w-full'>
-            კრიპტოვალუტის გლობალური საბაზრო კაპიტალი დღეს<span className={`${Number(data.data.data.market_cap_change_percentage_24h_usd) > 0 ? 'text-green-500' : 'text-red-500'} mr-2 ml-2 font-bold`}>
+            კრიპტოვალუტის გლობალური საბაზრო კაპიტალი დღეს<span className={`${Number(data.data.data.market_cap_change_percentage_24h_usd) > 0 ? 'text-green-400' : 'text-red-400'} mr-2 ml-2 font-bold`}>
               ${formatNumber(Number(data.data.data.total_market_cap.usd))}
             </span>დოლარია, რაც
-            <span className={`${Number(data.data.data.market_cap_change_percentage_24h_usd) > 0 ? 'text-green-500' : 'text-red-500'} mr-2 ml-2 font-bold`}>
+            <span className={`${Number(data.data.data.market_cap_change_percentage_24h_usd) > 0 ? 'text-green-400' : 'text-red-400'} mr-2 ml-2 font-bold`}>
               {Number(data.data.data.market_cap_change_percentage_24h_usd).toLocaleString('en-US')}%
             </span>
             ცვლილებაა ბოლო 24 საათის განმავლობაში.

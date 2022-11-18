@@ -87,17 +87,17 @@ const Index = () => {
                           `$${Number(coin.current_price).toLocaleString('en-US')}`}</p>
                       </th>
                       <th className='px-6 py-4'>
-                        <p className={`${Number(coin.price_change_percentage_1h_in_currency) > 0 ? 'text-green-500' : 'text-red-500'}`}>
+                        <p className={`${Number(coin.price_change_percentage_1h_in_currency) > 0 ? 'text-green-400' : 'text-red-400'}`}>
                           {`${Number(coin.price_change_percentage_1h_in_currency).toFixed(2)}%`}
                         </p>
                       </th>
                       <th className='px-6 py-4'>
-                        <p className={`${Number(coin.price_change_percentage_24h) > 0 ? 'text-green-500' : 'text-red-500'}`}>
+                        <p className={`${Number(coin.price_change_percentage_24h) > 0 ? 'text-green-400' : 'text-red-400'}`}>
                           {`${Number(coin.price_change_percentage_24h).toFixed(2)}%`}
                         </p>
                       </th>
                       <th className='px-6 py-4'>
-                        <p className={`${Number(coin.price_change_percentage_7d_in_currency) > 0 ? 'text-green-500' : 'text-red-500'}`}>
+                        <p className={`${Number(coin.price_change_percentage_7d_in_currency) > 0 ? 'text-green-400' : 'text-red-400'}`}>
                           {`${Number(coin.price_change_percentage_7d_in_currency).toFixed(2)}%`}
                         </p>
                       </th>

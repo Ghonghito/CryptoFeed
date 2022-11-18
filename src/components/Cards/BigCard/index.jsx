@@ -12,11 +12,11 @@ const Index = ({ data, name, shadowColor }) => {
             <div>
               {shadowColor === 'green' ? (
                 <div>
-                  <FaArrowUp className='text-green-500' />
+                  <FaArrowUp className='text-green-400' />
                 </div>
               ) : (
                 <div>
-                  <FaArrowDown className='text-red-500' />
+                  <FaArrowDown className='text-red-400' />
                 </div>
               )}
             </div>

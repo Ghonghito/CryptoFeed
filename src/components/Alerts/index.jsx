@@ -16,7 +16,7 @@ const index = ({ variant, text }) => {
       ) : null}
       {variant === 'success' ? (
         <div className='flex p-3 text-sm bg-green-200 rounded-lg border-[1px] border-green-500 shadow-md' role='alert'>
-          <AiFillCheckCircle className='text-green-500 inline flex-shrink-0 text-[20px] mr-2' />
+          <AiFillCheckCircle className='text-green-400 inline flex-shrink-0 text-[20px] mr-2' />
           <span className='sr-only'>success</span>
           <div>
             <p className='text-zinc-900 text-sm w-full font-semibold'>{text}</p>
@@ -34,7 +34,7 @@ const index = ({ variant, text }) => {
       ) : null}
       {variant === 'error' ? (
         <div className='flex p-3 text-sm bg-red-200 rounded-lg border-[1px] border-red-300 shadow-md' role='alert'>
-          <AiFillCloseCircle className='text-red-500 inline flex-shrink-0 text-[20px] mr-2' />
+          <AiFillCloseCircle className='text-green-400 inline flex-shrink-0 text-[20px] mr-2' />
           <span className='sr-only'>error</span>
           <div>
             <p className='text-zinc-900 text-sm w-full font-semibold'>{text}</p>
