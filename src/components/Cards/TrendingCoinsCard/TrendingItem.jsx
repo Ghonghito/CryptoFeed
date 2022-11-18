@@ -6,7 +6,7 @@ const TrendingItem = ({ name, symbol, price, logo, rank }) => {
     <div className='duration-200 bg-gray-200 dark:bg-zinc-900 rounded-lg p-2'>
       <div className='flex justify-between'>
         <div className='flex items-center gap-2'>
-          <img src={logo} alt='BTC' className='w-5' />
+          <img src={logo} alt='BTC' className='w-5 rounded-full' />
           <div className='flex items-center gap-2'>
             {name && (<Typography>{name}</Typography>)}
             <Typography className='text-sm'>{symbol}</Typography>
@@ -16,7 +16,7 @@ const TrendingItem = ({ name, symbol, price, logo, rank }) => {
           <Typography>{price}</Typography>
         ) : null}
         {rank ? (
-          <Typography>#{rank}</Typography>
+          <Typography className='text-sm'>#{rank}</Typography>
         ) : null}
       </div>
     </div>
