@@ -1,5 +1,6 @@
 import React from 'react'
 import DarkModeButton from 'components/DarkModeButton'
+import { NavLink } from 'react-router-dom'
 import Typography from 'components/Typography'
 
 const MarketOverview = ({ globalData, isMobile }) => {
@@ -10,7 +11,7 @@ const MarketOverview = ({ globalData, isMobile }) => {
           <div className='flex justify-start lg:flex-1 items-center space-x-8'>
             <div className='space-x-5 flex text-xs'>
               <Typography className='flex items-center gap-1 whitespace-nowrap'>ქოინები: <span className='text-primary'>{Number(globalData.data.data.active_cryptocurrencies).toLocaleString('en-US')}</span></Typography>
-              <Typography className='flex items-center gap-1 whitespace-nowrap'>ბირჟები: <span className='text-primary'>{Number(globalData.data.data.markets).toLocaleString('en-US')}</span></Typography>
+              <Typography className='flex items-center gap-1 whitespace-nowrap'>ბირჟები: <NavLink to={'/exchanges'} exact='true'><span className='text-primary'>{Number(globalData.data.data.markets).toLocaleString('en-US')}</span></NavLink></Typography>
               <Typography className='flex items-center gap-1 whitespace-nowrap'>კაპიტალიზაცია: <span className='text-primary'>${Number(globalData.data.data.total_market_cap.usd).toLocaleString('en-US')}</span></Typography>
               <Typography className='flex items-center gap-1 whitespace-nowrap'>24სთ ნავაჭრი: <span className='text-primary'>${Number(globalData.data.data.total_volume.usd).toLocaleString('en-US')}</span></Typography>
               <Typography className='flex items-center gap-1 whitespace-nowrap'>BTC დომინირება: <span className='text-primary'>{Number(globalData.data.data.market_cap_percentage.btc).toLocaleString('en-US')}%</span></Typography>
